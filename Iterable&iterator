@@ -1,0 +1,5 @@
+Iterable #可迭代对象 able（能够，能够迭代）
+Iterator #迭代器 
+
+可用isinstance([]or{}or'abc'..., Iterator) 判断一个对象是否是Iterator
+Iterator对象表示的是一个数据流 #数据流：只能以事先规定好的顺序被读取一次的数据的一个序列

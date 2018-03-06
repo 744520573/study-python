@@ -1,0 +1,15 @@
+# 利用map和reduce编写一个str2float函数，把字符串'123.456'转换成浮点数123.456
+# -*- coding: utf-8 -*-
+from functools import reduce
+
+def str2float(s):
+    int_part, dec_part = s.split('.')
+    return reduce(lambda x, y: 10*x+y, map(int, int_part)) + \
+           reduce(lambda x, y: 10*x+y, map(int, dec_part))*10**(-len(dec_part))
+
+#测试
+print('str2float(\'123.456\') =', str2float('123.456'))
+if abs(str2float('123.456') - 123.456) < 0.00001:
+    print('测试成功!')
+else:
+    print('测试失败!')

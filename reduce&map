@@ -7,9 +7,26 @@ def str2float(s):
     return reduce(lambda x, y: 10*x+y, map(int, int_part)) + \
            reduce(lambda x, y: 10*x+y, map(int, dec_part))*10**(-len(dec_part))
 
-#测试
+# 测试
+
 print('str2float(\'123.456\') =', str2float('123.456'))
 if abs(str2float('123.456') - 123.456) < 0.00001:
+    print('测试成功!')
+else:
+    print('测试失败!')
+
+
+
+# Python提供的sum()函数可以接受一个list并求和，请编写一个prod()函数，可以接受一个list并利用reduce()求积：
+# -*- coding: utf-8 -*-
+from functools import reduce
+def prod(L):
+    return reduce(lambda x, y: x*y, L)
+
+# 测试
+
+print('3 * 5 * 7 * 9 =', prod([3, 5, 7, 9]))
+if prod([3, 5, 7, 9]) == 945:
     print('测试成功!')
 else:
     print('测试失败!')
